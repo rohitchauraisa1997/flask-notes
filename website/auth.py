@@ -3,17 +3,17 @@ auth.py contains the routes to
 all the pages in our web app
 that need authorization tokens.
 """
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 auth = Blueprint('auth',__name__)
 
 @auth.route("/login")
 def login():
-    return "<p>Login</p>"
+    return render_template("login.html",text="testing",boolean=True)
 
 @auth.route("/sign_up")
 def signup():
-    return "<p>Sign Up</p>"
+    return render_template("sign_up.html")
 
 @auth.route("/logout")
 def logout():

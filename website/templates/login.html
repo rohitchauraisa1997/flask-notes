@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+
+{% block title %}
+Login
+{%endblock%}
+
+{% block content %}
+<h1>This is the Login page.</h1>
+{{text}}
+{%if boolean==True %}
+    <h2>
+        Boolean is True.
+    </h2>
+{%else%}
+    <h2>
+        Boolean is False.
+    </h2>
+{%endif%}
+{% endblock %}
+
+
