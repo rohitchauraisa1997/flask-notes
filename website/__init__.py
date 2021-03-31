@@ -1,4 +1,8 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+DB_NAME = "databse.db"
 
 def create_app():
     # __name__ represents name of file
@@ -6,6 +10,8 @@ def create_app():
     # encrypts and secures cookies and session data
     # in ouur app.
     app.config['SECRET_KEY'] = 'rohit'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    db.init_app(app)
     from .views import views
     from .auth import auth
     
